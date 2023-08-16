@@ -6,8 +6,8 @@ from impacket.dcerpc.v5 import transport
 from impacket.dcerpc.v5.rpcrt import RPC_C_AUTHN_LEVEL_NONE
 from impacket.dcerpc.v5.dcomrt import IObjectExporter
 
-def main(argv):
-
+def main():
+    argv = sys.argv[1:]
     try:
         opts, args = getopt.getopt(argv,"ht:",["target="])
     except getopt.GetoptError:
@@ -43,4 +43,4 @@ def main(argv):
         print ("Address: " + NetworkAddr)
 
 if __name__ == "__main__":
-   main(sys.argv[1:])
+   main()
